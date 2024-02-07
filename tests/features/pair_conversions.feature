@@ -11,7 +11,7 @@ Feature: Pair Conversion API Endpoint
 
   Scenario Outline: Convert between two specific currencies invalid codes
     When I send a request to pair conversions endpoint with "<base_code>", "<target_code>", "<amount>"
-    Then API returns a JSON object with "unsupported-code"
+    Then API returns a JSON object with "unsupported-code" error type
     Examples:
       |base_code |target_code| amount|
       | UST      | GBP       |100    |
