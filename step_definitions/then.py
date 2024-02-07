@@ -15,7 +15,7 @@ def check_exchange_rates(base_currency):
     assert_that(json_response['conversion_rates']).is_length(all_supported_currencies)
 
 
-@then(parsers.cfparse('API returns a JSON object with "{expected_error_type}"'))
+@then(parsers.cfparse('API returns a JSON object with "{expected_error_type}" error type'))
 def check_standard_requests_error(expected_error_type):
     json_response = Context.response.json()
     expected_status_code = HTTPStatus.FORBIDDEN.value if expected_error_type == 'invalid-key' else HTTPStatus.NOT_FOUND.value
