@@ -8,6 +8,7 @@
       3. [Installation](#installation)
       4. [Running Tests](#running-tests)
       5. [Generating Allure Report](#generating-allure-report)
+      6. [Issues found](#issues-found)
       
 # Exchange Rate API Test Framework
 
@@ -56,3 +57,6 @@ To generate and view the Allure report, run the following commands:
 allure serve path-to-allure-results
 ```
 This will generate the Allure report and open it in your default web browser.
+
+### Issues found
+I was not able to find any issues to do with behaviour of api endpoints but with the vague error messages returned after making requests with unsupported currency codes. To enhance the debugging process, it is recommended that the error messages include specific details about the encountered error like the actual unsupported code.
