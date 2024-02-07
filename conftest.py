@@ -9,6 +9,14 @@ def load_config():
     load_yaml('settings.yml')
 
 
+@pytest.fixture(autouse=True)
+def delete_response_attribute():
+    """Fixture to delete the 'response' attribute from the 'Context' class after each test."""
+    yield
+    if hasattr(Context, 'response'):
+        delattr(Context, 'response')
+
+
 @pytest.hookimpl(hookwrapper=True)
 def pytest_runtest_makereport(item):
     """

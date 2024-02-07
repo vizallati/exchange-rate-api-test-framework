@@ -1,6 +1,5 @@
 import pytest
 from pytest_bdd import scenario
-from step_definitions.given import *
 from step_definitions.when import *
 from step_definitions.then import *
 
@@ -14,4 +13,10 @@ def test_exchange_rate_retrieval():
 @pytest.mark.case_id('EX-002')
 @scenario('features/standard_requests.feature', 'Error Handling - Invalid Base Currency')
 def test_invalid_base_currency():
+    pass
+
+
+@pytest.mark.case_id('EX-003')
+@scenario('features/standard_requests.feature', 'Basic Exchange Rate Retrieval with invalid api key')
+def test_exchange_rate_retrieval_invalid_creds():
     pass
