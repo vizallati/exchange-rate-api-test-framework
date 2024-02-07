@@ -4,7 +4,7 @@ from core.utils import Context
 
 class ExchangeRate(HttpClient):
     """
-    This class extends the HttpClient class to interact specifically with an exchange rate API.
+    This class extends the HttpClient class to interact specifically with the exchange rate API.
     It provides methods to perform standard requests for exchange rates and pair conversions.
 
     Attributes:
@@ -23,9 +23,14 @@ class ExchangeRate(HttpClient):
         self.api_version = Context.api_version
         self.api_key = Context.api_key
 
-    def standard_requests(self, currency):
-        return self.request('GET', f'{self.base_url}/{self.api_version}/{self.api_key}/latest/{currency}')
+    def standard_requests(self, currency, api_key=None):
+        api_key = api_key or self.api_key
+        return self.request('GET', f'{self.base_url}/{self.api_version}/{api_key}/latest/{currency}')
 
-    def pair_conversions(self, input_currency, output_currency, amount):
-        return self.request('GET', f'{self.base_url}/{self.api_version}/{self.api_key}/pair/{input_currency}/'
-                                   f'{output_currency}/{amount}')
+    def pair_conversions(self, input_currency, output_currency, amount, api_key=None):
+        api_key = api_key or self.api_key
+        url = f'{self.base_url}/{self.api_version}/{api_key}/pair/{input_currency}/{output_currency}'
+        if amount:
+            url += f'/{amount}'
+        return self.request('GET', url)
+
