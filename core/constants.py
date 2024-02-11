@@ -16,4 +16,4 @@ class HTTPStatus(Enum):
     GATEWAY_TIMEOUT = 504
 
 
-all_supported_currencies = 162
+ALL_SUPPORTED_CURRENCIES = 162

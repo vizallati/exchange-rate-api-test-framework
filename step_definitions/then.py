@@ -1,6 +1,6 @@
 from pytest_bdd import parsers
 from pytest_bdd.steps import then
-from core.constants import all_supported_currencies, HTTPStatus
+from core.constants import ALL_SUPPORTED_CURRENCIES, HTTPStatus
 from core.utils import Context
 from assertpy import assert_that
 
@@ -12,7 +12,7 @@ def check_exchange_rates(base_currency):
     assert_that(Context.response.status_code).is_equal_to(HTTPStatus.OK.value)
     assert_that(json_response['result']).is_equal_to('success')
     assert_that(json_response['base_code']).is_equal_to(base_currency)
-    assert_that(json_response['conversion_rates']).is_length(all_supported_currencies)
+    assert_that(json_response['conversion_rates']).is_length(ALL_SUPPORTED_CURRENCIES)
 
 
 @then(parsers.cfparse('API returns a JSON object with "{expected_error_type}" error type'))
