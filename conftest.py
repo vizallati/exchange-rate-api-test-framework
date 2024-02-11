@@ -6,6 +6,7 @@ from allure_pytest_bdd.pytest_bdd_listener import PytestBDDListener
 
 @pytest.fixture(scope='session', autouse=True)
 def load_config():
+    """Fixture for loading config files used by tests to memory."""
     load_yaml('settings.yml')
 
 
