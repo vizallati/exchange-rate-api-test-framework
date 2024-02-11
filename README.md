@@ -1,6 +1,6 @@
 # Table of Contents
 
-1. [Exchange Rate API Test Framework](#playwright-test-automation-framework)
+1. [Exchange Rate API Test Framework](#exchange-rate-api-test-framework)
    1. [Features](#features)
    2. [Getting Started](#getting-started)
       1. [Prerequisites](#prerequisites)
@@ -68,7 +68,7 @@ This command will execute the tests and generate Allure report data in the allur
 To generate and view the Allure report, run the following commands:
 
 ```bash
-allure serve path-to-allure-results
+allure serve allure_results
 ```
 This will generate the Allure report and open it in your default web browser.
 
