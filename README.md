@@ -1,6 +1,6 @@
 # Table of Contents
 
-1. [Exchange Rate API Test Framework](#playwright-test-automation-framework)
+1. [Exchange Rate API Test Framework](#exchange-rate-api-test-framework)
    1. [Features](#features)
    2. [Getting Started](#getting-started)
       1. [Prerequisites](#prerequisites)
